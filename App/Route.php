@@ -7,6 +7,9 @@ class Route
     public function __construct()
     {
         $this->initRoutes();
+
+        //funcao run e instanciando o getUrl no $url
+        $this->run($this->getUrl());
     }
 
     private $routes;
@@ -38,6 +41,12 @@ class Route
 
         $this->setRoutes($routes);
     }
+
+    //funcao do que o usuario vai passar na url    
+    public function run($url){
+        echo $url;
+    }
+
     public function getUrl()
     {
         return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
