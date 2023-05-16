@@ -28,9 +28,9 @@ class Route
     public function initRoutes()
     {
         $routes['home'] = array(
-            'route' => '/',
-            'controller' => 'indexController',
-            'action' => 'index'
+            'route' => '/', //route vai ser o meio de rotear o controller 
+            'controller' => 'indexController', //controller está acessando o indexcontroller
+            'action' => 'index' //action esta chamando as funcoes do indexcontroller
         );
 
         $routes['sobre_nos'] = array(
@@ -45,6 +45,9 @@ class Route
     //funcao do que o usuario vai passar na url    
     public function run($url){
         echo $url;
+        foreach($this->getRoutes() as $key => $route){
+            print_r($route);
+        }
     }
 
     public function getUrl()
