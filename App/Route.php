@@ -4,6 +4,11 @@ namespace App;
 
 class Route
 {
+    public function __construct()
+    {
+        $this->initRoutes();
+    }
+
     private $routes;
 
     public function getRoutes()
@@ -30,6 +35,8 @@ class Route
             'controller' => 'indexController',
             'action' => 'sobreNos'
         );
+
+        $this->setRoutes($routes);
     }
     public function getUrl()
     {
