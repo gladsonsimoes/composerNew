@@ -28,14 +28,14 @@ class Route
     public function initRoutes()
     {
         $routes['home'] = array(
-            'route' => '/', //route vai ser o meio de rotear o controller 
-            'controller' => 'indexController', //controller está acessando o indexcontroller
-            'action' => 'index' //action esta chamando as funcoes do indexcontroller
+            'route' => '/', //route vai ser a url quando usuario vai digitar 
+            'controller' => 'IndexController', //controller está acessando o indexcontroller
+            'action' => 'index' //action esta chamando as funcoes do IndexController.php
         );
 
         $routes['sobre_nos'] = array(
-            'route' => '/',
-            'controller' => 'indexController',
+            'route' => '/sobre_nos', 
+            'controller' => 'IndexController',
             'action' => 'sobreNos'
         );
 
@@ -45,8 +45,14 @@ class Route
     //funcao do que o usuario vai passar na url    
     public function run($url){
         echo $url;
-        foreach($this->getRoutes() as $key => $route){
-            print_r($route);
+        foreach($this->getRoutes() as $key => $route){ 
+            if($url == $route['route']){ //vai acessar a url de route
+                $class = "App\\Controllers\\".$route['controller']; //classe controladora , chamando o array controller de $route atraves do array route
+
+                $controller = new $class; //instanciando a classe
+                $action = $route['action']; //variavel action que chama o array da action
+                $controller->$action(); //executando 
+            }
         }
     }
 
