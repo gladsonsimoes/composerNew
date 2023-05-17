@@ -3,11 +3,11 @@
 
   class IndexController{
     public function index(){
-        echo 'estamos na index';
+        require_once("../App/Views/index/index.phtml");
     }
 
     public function  sobreNos(){
-        echo 'estamos na sobreNos';
+        require_once("../App/Views/index/sobreNos.phtml");
     }
   }
 
