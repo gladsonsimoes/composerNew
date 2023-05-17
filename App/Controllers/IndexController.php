@@ -3,6 +3,7 @@
 
   class IndexController{
     public function index(){
+        $dados = array('amora', 'pera', 'manga'); //dados do index
         require_once("../App/Views/index/index.phtml");
     }
 
