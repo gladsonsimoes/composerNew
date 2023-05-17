@@ -4,19 +4,19 @@ require_once "../vendor/autoload.php";
 $route = new \App\Route;
 
 //echo "funcionando";
-echo "<pre>";
+// echo "<pre>";
 
-print_r($route->getUrl());
+// print_r($route->getUrl());
 
-echo "</pre>";
+// echo "</pre>";
 
-echo "<br>";
+// echo "<br>";
 
 
-echo "<pre>";
+// echo "<pre>";
 
-print_r($route->getRoutes());
+// print_r($route->getRoutes());
 
-echo "</pre>";
+// echo "</pre>";
 
 ?>
